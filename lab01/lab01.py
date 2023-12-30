@@ -38,7 +38,13 @@ def divisible_by_k(n, k):
     >>> c
     0
     """
-    "*** YOUR CODE HERE ***"
+    num, counts = 1, 0
+    while num <= n:
+        if num % k == 0:
+            print(num)
+            counts += 1
+        num += 1
+    return counts
 
 
 def sum_digits(y):
