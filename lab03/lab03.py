@@ -28,8 +28,13 @@ def ordered_digits(x):
     False
 
     """
-    "*** YOUR CODE HERE ***"
-
+    last, x = x % 10, x // 10
+    while x > 0:
+        prev_last = x % 10
+        if prev_last > last:
+            return False 
+        last, x = prev_last, x // 10
+    return True
 
 def get_k_run_starter(n, k):
     """Returns the 0th digit of the kth increasing run within n.
