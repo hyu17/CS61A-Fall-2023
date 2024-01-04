@@ -74,7 +74,15 @@ def count_cond(condition):
     >>> count_primes(20)   # 2, 3, 5, 7, 11, 13, 17, 19
     8
     """
-    "*** YOUR CODE HERE ***"
+    def counter(n):
+        count = 0
+        k = 1
+        while k <= n:
+            if condition(n, k):
+                count += 1
+            k += 1
+        return count
+    return counter
 
 
 def multiple(a, b):
