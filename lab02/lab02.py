@@ -93,7 +93,10 @@ def multiple(a, b):
     >>> multiple(14, 21)
     42
     """
-    "*** YOUR CODE HERE ***"
+    n = max(a, b)
+    while n % a or n % b:
+        n += 1
+    return n
 
 
 
