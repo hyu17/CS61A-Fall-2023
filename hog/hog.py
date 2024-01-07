@@ -245,7 +245,13 @@ def make_averaged(original_function, samples_count=1000):
     3.0
     """
     # BEGIN PROBLEM 8
-    "*** YOUR CODE HERE ***"
+    def averager(*args):
+        k, dice_nums = 1, 0
+        while k <= samples_count:
+            dice_nums += original_function(*args)
+            k += 1
+        return dice_nums / samples_count
+    return averager
     # END PROBLEM 8
 
 
