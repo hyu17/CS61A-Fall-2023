@@ -76,7 +76,11 @@ def interleaved_sum(n, odd_term, even_term):
     >>> check(HW_SOURCE_FILE, 'interleaved_sum', ['While', 'For', 'Mod']) # ban loops and %
     True
     """
-    "*** YOUR CODE HERE ***"
+    def summation(term0, term1, k):
+        if k == n:
+            return term0(k)
+        return term0(k) + summation(term1, term0, k+1)
+    return summation(odd_term, even_term, 1)
 
 
 def next_larger_coin(coin):
