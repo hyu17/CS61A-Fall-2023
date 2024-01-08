@@ -31,7 +31,7 @@ def my_filter(pred, seq):
     >>> my_filter(lambda x: max(5, x) == 5, [1, 2, 3, 4, 5, 6, 7])
     [1, 2, 3, 4, 5]
     """
-    return ______
+    return [x for x in seq if pred(x) == True]
 
 def my_reduce(combiner, seq):
     """Combines elements in seq using combiner.
