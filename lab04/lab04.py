@@ -45,7 +45,10 @@ def my_reduce(combiner, seq):
     >>> my_reduce(lambda x, y: x + 2 * y, [1, 2, 3]) # (1 + 2 * 2) + 2 * 3
     11
     """
-    "*** YOUR CODE HERE ***"
+    total = seq[0]
+    for element in seq[1:]:
+        total = combiner(total, element)
+    return total
 
 def my_map_syntax_check():
     """Check that your two_of_three code consists of nothing but a return statement.
