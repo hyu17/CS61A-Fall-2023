@@ -134,7 +134,18 @@ def count_coins(total):
     >>> check(HW_SOURCE_FILE, 'count_coins', ['While', 'For'])
     True
     """
-    "*** YOUR CODE HERE ***"
+    def constrained_count(smallest_coin, rest):
+        if rest == 0:
+            return 1
+        elif rest < 0:
+            return 0
+        elif smallest_coin == None:
+            return 0
+        else:
+            with_coin = constrained_count(smallest_coin, rest-smallest_coin)
+            without_coin = constrained_count(next_larger_coin(smallest_coin), rest)
+            return with_coin + without_coin
+    return constrained_count(1, total)
 
 
 def print_move(origin, destination):
