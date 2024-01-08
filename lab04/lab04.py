@@ -92,7 +92,12 @@ def double_eights(n):
     >>> check(LAB_SOURCE_FILE, 'double_eights', ['While', 'For'])
     True
     """
-    "*** YOUR CODE HERE ***"
+    if n < 10:
+        return False
+    elif n % 10 == 8 and n // 10 % 10 == 8:
+        return True
+    else:
+        return double_eights(n//10)
 
 
 def merge(lst1, lst2):
