@@ -124,7 +124,12 @@ def merge(lst1, lst2):
     >>> check(LAB_SOURCE_FILE, 'merge', ['While', 'For'])
     True
     """
-    "*** YOUR CODE HERE ***"
+    if not lst1 or not lst2:
+        return lst1 + lst2
+    elif lst1[0] < lst2[0]:
+        return [lst1[0]] + merge(lst1[1:], lst2)
+    else:
+        return [lst2[0]] + merge(lst1, lst2[1:])
 
 
 def summation(n, term):
